@@ -548,7 +548,7 @@ aux 100 premiers professionnels.
 
 </div>
 
-<form id="leadForm">
+<form <form id="leadForm" action="https://formspree.io/f/maeylblq" method="POST">
 
 <h3>Je veux découvrir NIN’HOME</h3>
 
@@ -650,36 +650,7 @@ Projet en cours de préparation • Toulon • Var
 </div>
 </footer>
 
-<script>
-const form=document.getElementById("leadForm");
-const success=document.getElementById("success");
 
-form.addEventListener("submit",function(e){
-
-e.preventDefault();
-
-const data=
-Object.fromEntries(new FormData(form).entries());
-
-const leads=
-JSON.parse(localStorage.getItem("ninhome_leads")||"[]");
-
-leads.push({
-...data,
-date:new Date().toISOString()
-});
-
-localStorage.setItem(
-"ninhome_leads",
-JSON.stringify(leads)
-);
-
-success.style.display="block";
-
-form.reset();
-
-});
-</script>
 
 </body>
 </html>
