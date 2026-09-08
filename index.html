@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NIN'HOME — Vos pros. Chez vous.</title>
+
+<style>
+:root{
+--green:#103d35;
+--peach:#efb99f;
+--cream:#fbf8f4;
+--text:#17332d;
+--grey:#6e7975;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+margin:0;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+background:var(--cream);
+color:var(--text);
+line-height:1.5
+}
+.wrap{width:min(1100px,91%);margin:auto}
+nav{
+background:rgba(251,248,244,.95);
+position:sticky;
+top:0;
+z-index:10;
+border-bottom:1px solid #e9e4df
+}
+.nav{
+height:68px;
+display:flex;
+align-items:center;
+justify-content:space-between
+}
+.logo{
+font-size:21px;
+font-weight:800;
+letter-spacing:2px
+}
+.btn{
+display:inline-block;
+background:var(--peach);
+color:#17332d;
+padding:14px 22px;
+border-radius:30px;
+font-weight:700;
+text-decoration:none;
+border:0;
+cursor:pointer
+}
+.hero{
+padding:65px 0;
+display:grid;
+grid-template-columns:1.15fr .85fr;
+gap:45px;
+align-items:center
+}
+.tag{
+font-size:12px;
+font-weight:800;
+letter-spacing:2px;
+text-transform:uppercase
+}
+h1{
+font-size:clamp(43px,7vw,72px);
+line-height:1;
+letter-spacing:-3px;
+margin:14px 0 20px
+}
+.peach{color:#c77d64}
+.lead{
+font-size:19px;
+color:#44544f;
+max-width:620px
+}
+.points{
+display:flex;
+gap:22px;
+flex-wrap:wrap;
+margin:28px 0
+}
+.point strong{
+display:block;
+font-size:21px
+}
+.mockup{
+background:var(--green);
+border-radius:32px;
+padding:30px;
+color:white
+}
+.phone{
+background:white;
+color:var(--text);
+border:8px solid #111;
+border-radius:32px;
+padding:18px;
+max-width:280px;
+margin:auto
+}
+.photo{
+height:160px;
+background:#f1d6c8;
+border-radius:20px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:65px
+}
+.stars{color:#e8a62c}
+.chip{
+display:inline-block;
+background:#edf3f0;
+padding:5px 9px;
+border-radius:20px;
+font-size:11px;
+margin:3px
+}
+section{padding:70px 0}
+h2{
+font-size:clamp(32px,5vw,48px);
+line-height:1.05;
+margin:8px 0 15px
+}
+.services{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:12px
+}
+.card{
+background:white;
+padding:22px;
+border-radius:20px;
+box-shadow:0 10px 30px #17332d0d
+}
+.service{text-align:center}
+.icon{font-size:32px}
+.steps{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px
+}
+.num{
+width:38px;
+height:38px;
+border-radius:50%;
+background:var(--green);
+color:white;
+display:grid;
+place-items:center;
+font-weight:bold
+}
+.band{
+background:var(--green);
+color:white
+}
+.benefits{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+text-align:center
+}
+.dashboard{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:35px;
+align-items:center
+}
+.check{margin:12px 0}
+.check span{
+color:#31906c;
+font-weight:bold
+}
+.stats{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:10px
+}
+.stat{
+background:#f3f5f3;
+border-radius:15px;
+padding:15px
+}
+.stat strong{
+font-size:24px;
+display:block
+}
+.signup{
+background:#f3d5c5;
+border-radius:30px;
+padding:35px;
+display:grid;
+grid-template-columns:.8fr 1.2fr;
+gap:30px
+}
+form{
+background:white;
+padding:24px;
+border-radius:22px
+}
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px
+}
+label{
+font-size:13px;
+font-weight:700
+}
+input,select{
+width:100%;
+padding:13px;
+border:1px solid #d7dfdb;
+border-radius:12px;
+margin-top:5px;
+font-size:16px;
+background:white
+}
+.full{grid-column:1/-1}
+.submit{
+width:100%;
+background:var(--green);
+color:white;
+padding:15px;
+border:0;
+border-radius:30px;
+font-weight:bold;
+font-size:15px;
+margin-top:18px
+}
+.small{font-size:12px;color:var(--grey)}
+.success{
+display:none;
+background:#e5f5eb;
+color:#226747;
+padding:13px;
+border-radius:12px;
+margin-top:12px
+}
+footer{
+padding:35px 0;
+border-top:1px solid #e2ded9;
+text-align:center
+}
+
+@media(max-width:760px){
+.hero,.dashboard,.signup{grid-template-columns:1fr}
+.services{grid-template-columns:1fr 1fr}
+.steps{grid-template-columns:1fr}
+.benefits{grid-template-columns:1fr 1fr}
+.grid{grid-template-columns:1fr}
+.full{grid-column:auto}
+h1{letter-spacing:-2px}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="wrap nav">
+<div class="logo">⌂ NIN’HOME</div>
+<a href="#inscription" class="btn">Rejoindre</a>
+</div>
+</nav>
+
+<main>
+
+<div class="wrap hero">
+
+<div>
+<div class="tag">Plateforme de services à domicile</div>
+
+<h1>
+Développez votre clientèle.<br>
+<span class="peach">Pas vos commissions.</span>
+</h1>
+
+<p class="lead">
+NIN’HOME met en relation les professionnels à domicile
+avec des clients près de chez eux.
+</p>
+
+<p>
+Vous fixez vos tarifs. Vous choisissez vos horaires.
+<strong>Vous gardez 100 % de vos revenus.</strong>
+</p>
+
+<div class="points">
+<div class="point">
+<strong>0 %</strong>
+de commission NIN’HOME
+</div>
+
+<div class="point">
+<strong>39 €/mois</strong>
+offre de lancement
+</div>
+
+<div class="point">
+<strong>3 mois offerts</strong>
+aux 100 premiers pros
+</div>
+</div>
+
+<a href="#inscription" class="btn">
+Je deviens Pro NIN’HOME →
+</a>
+
+<p class="small">
+Pré-inscription gratuite et sans engagement • Lancement pilote dans le Var
+</p>
+</div>
+
+<div class="mockup">
+
+<div class="phone">
+
+<div style="text-align:center;font-weight:800">
+NIN’HOME
+</div>
+
+<br>
+
+<div class="photo">💇‍♀️</div>
+
+<h3>Sarah D. ✓</h3>
+
+<div>
+<span class="stars">★★★★★</span>
+<strong>4,9</strong> (124 avis)
+</div>
+
+<p>
+<span class="chip">Coiffeuse à domicile</span>
+<span class="chip">Toulon +15 km</span>
+</p>
+
+<p>
+Coupe + brushing<br>
+<strong>À partir de 35 €</strong>
+</p>
+
+<div class="btn" style="display:block;text-align:center">
+Réserver une prestation
+</div>
+
+</div>
+
+<p style="text-align:center;margin-bottom:0">
+<strong>Votre talent. Leur confiance.<br>À domicile.</strong>
+</p>
+
+</div>
+</div>
+
+<section>
+<div class="wrap">
+
+<div class="tag">NIN’HOME</div>
+<h2>Vos services. Vos tarifs. Vos clients.</h2>
+
+<div class="services">
+
+<div class="card service">
+<div class="icon">✂️</div>
+<strong>Coiffure</strong>
+</div>
+
+<div class="card service">
+<div class="icon">✨</div>
+<strong>Esthétique</strong>
+</div>
+
+<div class="card service">
+<div class="icon">💆</div>
+<strong>Massage</strong>
+</div>
+
+<div class="card service">
+<div class="icon">💅</div>
+<strong>Onglerie</strong>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="wrap">
+
+<div class="tag">Simple et efficace</div>
+<h2>Comment ça marche ?</h2>
+
+<div class="steps">
+
+<div class="card">
+<div class="num">1</div>
+<h3>Créez votre profil</h3>
+<p>
+Présentez vos services, vos tarifs,
+votre zone et vos disponibilités.
+</p>
+</div>
+
+<div class="card">
+<div class="num">2</div>
+<h3>Recevez des réservations</h3>
+<p>
+Les clients découvrent votre profil
+et choisissent directement leur professionnel.
+</p>
+</div>
+
+<div class="card">
+<div class="num">3</div>
+<h3>Réalisez vos prestations</h3>
+<p>
+Travaillez selon vos conditions et gardez
+le prix de vos prestations.
+</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section class="band">
+<div class="wrap benefits">
+
+<div>
+<strong>0 %</strong><br>
+Commission NIN’HOME
+</div>
+
+<div>
+<strong>📅 Agenda</strong><br>
+Gérez vos réservations
+</div>
+
+<div>
+<strong>📍 Local</strong><br>
+Des clients près de vous
+</div>
+
+<div>
+<strong>💳 Paiement</strong><br>
+Simple et sécurisé
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="wrap dashboard">
+
+<div>
+
+<div class="tag">Votre espace professionnel</div>
+
+<h2>
+Tout pour gérer votre activité.
+</h2>
+
+<div class="check"><span>✓</span> Agenda et réservations</div>
+<div class="check"><span>✓</span> Prestations et tarifs libres</div>
+<div class="check"><span>✓</span> Gestion de vos clients</div>
+<div class="check"><span>✓</span> Suivi de votre chiffre d’affaires</div>
+<div class="check"><span>✓</span> Avis clients</div>
+<div class="check"><span>✓</span> Statistiques</div>
+
+</div>
+
+<div class="card">
+
+<h3>Bonjour Sarah 👋</h3>
+
+<p class="small">
+Votre activité cette semaine
+</p>
+
+<div class="stats">
+
+<div class="stat">
+<strong>12</strong>
+Prestations
+</div>
+
+<div class="stat">
+<strong>480 €</strong>
+CA
+</div>
+
+<div class="stat">
+<strong>4,9</strong>
+Note
+</div>
+
+</div>
+
+<br>
+
+<div class="card">
+📅 <strong>Prochain rendez-vous</strong>
+<br><br>
+Claire M.<br>
+Coupe + brushing<br>
+Aujourd’hui • 14:00
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section id="inscription">
+<div class="wrap signup">
+
+<div>
+
+<div class="tag">Lancement pilote • Var</div>
+
+<h2>
+Devenez Pro Fondateur NIN’HOME.
+</h2>
+
+<p>
+Nous construisons actuellement NIN’HOME
+avec les professionnels du secteur.
+</p>
+
+<p>
+<strong>🎁 3 mois offerts</strong><br>
+aux 100 premiers professionnels.
+</p>
+
+<p>
+✓ Gratuit pour se pré-inscrire<br>
+✓ Aucun engagement<br>
+✓ Aucun paiement maintenant
+</p>
+
+</div>
+
+<form id="leadForm">
+
+<h3>Je veux découvrir NIN’HOME</h3>
+
+<div class="grid">
+
+<label>
+Prénom
+<input required name="prenom" placeholder="Votre prénom">
+</label>
+
+<label>
+Métier
+<select required name="metier">
+<option value="">Choisissez</option>
+<option>Coiffure</option>
+<option>Esthétique</option>
+<option>Massage</option>
+<option>Onglerie</option>
+<option>Autre</option>
+</select>
+</label>
+
+<label>
+Ville
+<input required name="ville" placeholder="Ex : Toulon">
+</label>
+
+<label>
+Téléphone
+<input required name="telephone" type="tel" placeholder="06...">
+</label>
+
+<label class="full">
+E-mail
+<input required name="email" type="email" placeholder="vous@email.com">
+</label>
+
+<label class="full">
+Comment trouvez-vous actuellement vos clients ?
+<select name="acquisition">
+<option>Bouche-à-oreille</option>
+<option>Réseaux sociaux</option>
+<option>Google / site internet</option>
+<option>Plateforme de mise en relation</option>
+<option>Autre</option>
+</select>
+</label>
+
+<label class="full">
+39 €/mois avec 0 % de commission vous paraît :
+<select name="prix">
+<option>Très intéressant</option>
+<option>Correct</option>
+<option>Un peu cher</option>
+<option>Trop cher</option>
+</select>
+</label>
+
+<label class="full">
+Qu’attendez-vous principalement de NIN’HOME ?
+<input name="attente" placeholder="Ex : nouveaux clients, agenda...">
+</label>
+
+</div>
+
+<button class="submit" type="submit">
+Je me pré-inscris →
+</button>
+
+<p class="small">
+Projet actuellement en préparation.
+Aucun paiement n’est demandé.
+</p>
+
+<div class="success" id="success">
+Merci ! Votre intérêt pour NIN’HOME a bien été enregistré sur cet appareil.
+</div>
+
+</form>
+
+</div>
+</section>
+
+</main>
+
+<footer>
+<div class="wrap">
+
+<div class="logo">⌂ NIN’HOME</div>
+
+<p>
+<strong>Vos pros. Chez vous.</strong>
+</p>
+
+<p class="small">
+Projet en cours de préparation • Toulon • Var
+</p>
+
+</div>
+</footer>
+
+<script>
+const form=document.getElementById("leadForm");
+const success=document.getElementById("success");
+
+form.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+const data=
+Object.fromEntries(new FormData(form).entries());
+
+const leads=
+JSON.parse(localStorage.getItem("ninhome_leads")||"[]");
+
+leads.push({
+...data,
+date:new Date().toISOString()
+});
+
+localStorage.setItem(
+"ninhome_leads",
+JSON.stringify(leads)
+);
+
+success.style.display="block";
+
+form.reset();
+
+});
+</script>
+
+</body>
+</html>
